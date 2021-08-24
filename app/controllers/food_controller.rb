@@ -1,13 +1,7 @@
-class FoodsController < Sinatra::Base
-
-    configure do
-        set :public_folder, 'public'
-        set :views, 'app/views'
-      end
+class FoodsController < ApplicationController
     
       get "/foods" do
-        erb :'foods'
+        erb :'foods/foods'
       end
 
-  
 end
