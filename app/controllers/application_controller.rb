@@ -3,14 +3,12 @@ require 'JSON'
 require 'rest-client'
 
 class ApplicationController < Sinatra::Base
-  Access-Control-Allow-Origin: http://localhost:3000/
 
-  set :default_content_type, 'application/json'
+  # set :default_content_type, 'application/json'
 
   get "/foods" do
     @foods = Food.all
-    money = {food: @foods}
-    money.to_json
+    @foods.to_json
   end
 
   

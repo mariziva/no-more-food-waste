@@ -13,3 +13,5 @@ gem 'bcrypt'
 gem 'tux'
 gem 'rest-client'
 gem 'json'
+gem "rack-cors", "~> 1.1"
+gem "rack-contrib", "~> 2.3"
