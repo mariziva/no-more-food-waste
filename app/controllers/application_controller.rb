@@ -31,7 +31,8 @@ class ApplicationController < Sinatra::Base
       # unit: params[:unit],
       # days_until_expiration: params[:days_until_expiration],
       # date_of_purchase: params[:date_of_purchase],
-      name: params[:name]
+      name: params[:name],
+      quantity: params[:quantity]
     )
     food.to_json
   end
@@ -42,7 +43,7 @@ class ApplicationController < Sinatra::Base
       quantity: params[:quantity],
       unit: params[:unit],
       category: params[:category],
-      img_url: params[:imageUrl],
+      img_url: params[:img_url],
       days_until_expiration: params[:daysUntilExpiration],
       date_of_purchase: params[:dateOfPurchase],
     )
