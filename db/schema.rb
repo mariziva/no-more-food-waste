@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2021_08_24_154637) do
     t.integer "days_until_expiration"
     t.date "date_of_purchase"
     t.string "category"
+    t.string "img_url"
   end
 
 end

@@ -21,6 +21,7 @@ class ApplicationController < Sinatra::Base
   get "/foods/:id" do
     food = Food.find(params[:id])
     food[:name]
+    console.log(food)
   end
 
   patch "/foods/:id" do
@@ -30,11 +31,29 @@ class ApplicationController < Sinatra::Base
       # unit: params[:unit],
       # days_until_expiration: params[:days_until_expiration],
       # date_of_purchase: params[:date_of_purchase],
-      category: params[:category]
+      name: params[:name]
     )
     food.to_json
   end
 
+  post '/foods' do
+    new_item = Food.create(
+      name: params[:name],
+      quantity: params[:quantity],
+      unit: params[:unit],
+      category: params[:category],
+      img_url: params[:imageUrl],
+      days_until_expiration: params[:daysUntilExpiration],
+      date_of_purchase: params[:dateOfPurchase],
+    )
+    new_item.to_json
+  end
+
+  delete "/foods/:id" do
+    food = Food.find(params[:id])
+    food.destroy
+    food.to_json
+  end
 
 
 
